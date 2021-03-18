@@ -21,7 +21,7 @@ class Section extends Component {
                                     <p className="text-white-50 mb-4">
                                         We are a digital Agency focused on bringing high quality and innovative digital Solutions that helps you achieve new heights in your business
                                     </p>
-                                    <Link to="" className="btn btn-warning">Get Started</Link>
+                                    <a href="#contact-form" className="btn btn-warning">Get Started</a>
                                 </div>
                             </Col>
                         </Row>

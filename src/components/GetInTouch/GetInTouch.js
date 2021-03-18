@@ -1,11 +1,53 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Label, Button, FormGroup } from "reactstrap";
 import { AvForm, AvField } from 'availity-reactstrap-validation';
+import axios from 'axios'
 
 //Import Section Title
 import SectionTitle from "../common/section-title";
 
 class GetInTouch extends Component {
+    state = {
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    }
+
+
+
+    ValidSubmit = async () => {
+        let formdata = {
+            name: this.state.name,
+            email: this.state.email,
+            subject: this.state.subject,
+            message: this.state.message
+        }
+
+        console.log(this.state.name)
+        // submit the form
+
+        // eslint-disable-next-line
+        try {
+            // await axios.post('https://getform.io/f/4c535835-82f4-4ed3-b651-6de005c74865', {
+            //     body: data,
+            // })
+            const resp = await axios({
+                method: 'post',
+                url: 'https://getform.io/f/4c535835-82f4-4ed3-b651-6de005c74865',
+                data: { ...formdata }
+            });
+            console.log(resp)
+            console.log("we have submitted the form")
+        } catch (e) {
+            console.log("could not submit the form")
+            console.log(e)
+        }
+
+    }
+
+
+
     render() {
         return (
             <React.Fragment>
@@ -14,49 +56,49 @@ class GetInTouch extends Component {
                         <SectionTitle
                             title1="Get In "
                             title2="Touch"
-                            desc="Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero pulvinar hendrerit id lorem."
+                            desc="Leave us a message, we're always available"
                         />
 
                         <Row>
                             <Col lg={4}>
                                 <div className="contact-address">
                                     <h4 className="text-dark mb-4">Contact Info</h4>
-                                    <p className="text-muted f-15">Sed perspici unade omnis natus error sit voluptatem accusantium doloremque minus cumque.</p>
-                                    <p className="text-muted f-15 mb-4">Et harum quidem rerum facilis est et expedita sit distinctio at libero.</p>
+                                    <p className="text-muted f-15">Our Contact Info is listed below!</p>
                                 </div>
                                 <Row>
                                     <Col md={6}>
                                         <div className="contact-address">
-                                            <h5 className="text-dark mb-3 f-16">Address - A</h5>
-                                            <p className="text-muted f-15">3165 Roosevelt Wilson Riverside, CA 92507</p>
+                                            <h5 className="text-dark mb-3 f-16">Office Address:</h5>
+                                            <p className="text-muted f-15">Office No. LG21, Zainab Tower, Link Road, Model Town, Lahore </p>
                                         </div>
                                     </Col>
                                     <Col md={6}>
                                         <div className="contact-address">
-                                            <h5 className="text-dark mb-3 f-16">Address - B</h5>
-                                            <p className="text-muted f-15">1121 Bombardier Way Southfield, MI 48075</p>
+                                            <h5 className="text-dark mb-3 f-16">Phone Number</h5>
+                                            <p className="text-muted f-15">+92349-4826779</p>
                                         </div>
                                     </Col>
                                 </Row>
                             </Col>
 
-                            <Col lg={{size:7, offset:1}}>
+                            <Col lg={{ size: 7, offset: 1 }}>
                                 <div className="custom-form mt-4 mt-lg-0">
                                     <div id="message"></div>
-                                    <AvForm name="contact-form" id="contact-form">
+                                    <AvForm name="contact-form" id="contact-form" onValidSubmit={this.ValidSubmit} onInvalidSubmit={this.handleInvalidSubmit}>
                                         <Row>
                                             <Col lg={6}>
                                                 <FormGroup className="app-label">
                                                     <Label for="name">Name</Label>
                                                     <AvField
-                                                    name="name"
-                                                    id="name"
-                                                    type="text"
-                                                    className="form-control"
-                                                    placeholder="Your name..."
-                                                    errorMessage="Enter Your Name.."
-                                                    validate={{ required: { value: true } }}
-                                                />
+                                                        name="name"
+                                                        id="name"
+                                                        type="text"
+                                                        className="form-control"
+                                                        placeholder="Your name..."
+                                                        errorMessage="Enter Your Name.."
+                                                        onChange={e => this.setState({ name: e.target.value })}
+                                                        validate={{ required: { value: true } }}
+                                                    />
                                                 </FormGroup>
                                             </Col>
                                             <Col lg={6}>
@@ -68,6 +110,7 @@ class GetInTouch extends Component {
                                                         type="email"
                                                         className="form-control"
                                                         placeholder="Your email..."
+                                                        onChange={e => this.setState({ email: e.target.value })}
                                                         errorMessage="Enter Your email..."
                                                         validate={{
                                                             required: { value: true },
@@ -85,6 +128,7 @@ class GetInTouch extends Component {
                                                         type="text"
                                                         className="form-control"
                                                         placeholder="Enter Subject.."
+                                                        onChange={e => this.setState({ subject: e.target.value })}
                                                         errorMessage="Enter Your PSubject"
                                                         validate={{
                                                             required: { value: true },
@@ -95,7 +139,9 @@ class GetInTouch extends Component {
                                             <Col lg={12}>
                                                 <FormGroup className="app-label">
                                                     <Label for="comments">Message</Label>
-                                                    <textarea name="comments" id="comments" rows="3" className="form-control" placeholder="Enter message.."></textarea>
+                                                    <textarea name="comments" id="comments" rows="3"
+                                                        onChange={e => this.setState({ message: e.target.value })}
+                                                        className="form-control" placeholder="Enter message.."></textarea>
                                                 </FormGroup>
                                             </Col>
                                         </Row>
