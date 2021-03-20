@@ -24,7 +24,7 @@ class FeatureBox extends Component {
                                             </div>
                                             <h5 className="text-dark font-weight-normal mb-3 pt-3">{feature.title}</h5>
                                             <p className="text-muted mb-3 f-15">{feature.desc}</p>
-                                            <Link to={feature.link} className="f-16 text-warning">Read More <span className="right-icon ml-2">&#8594;</span></Link>
+                                            {/* <Link to={feature.link} className="f-16 text-warning">Read More <span className="right-icon ml-2">&#8594;</span></Link> */}
                                         </div>
                                     </Col>
                                 </Row>
@@ -37,7 +37,7 @@ class FeatureBox extends Component {
                                             </div>
                                             <h5 className="text-dark font-weight-normal mb-3 pt-3">{feature.title}</h5>
                                             <p className="text-muted mb-3 f-15">{feature.desc}</p>
-                                            <Link to={feature.link} className="f-16 text-warning">Read More <span className="right-icon ml-2">&#8594;</span></Link>
+                                            {/* <Link to={feature.link} className="f-16 text-warning">Read More <span className="right-icon ml-2">&#8594;</span></Link> */}
                                         </div>
                                     </Col>
                                     <Col md={{ size: 5, offset: 1 }} className="mt-5 mt-sm-0" style={{ background: `url(${featurebg}) center center` }}>

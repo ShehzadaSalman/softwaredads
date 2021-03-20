@@ -82,7 +82,7 @@ class Layout3 extends Component {
                     <Feature />
 
                     {/* Importing counter */}
-                    {/* <Counter /> */}
+                    <Counter />
 
                     {/* Importing clients */}
                     <Clients />

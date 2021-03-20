@@ -37,7 +37,7 @@ class Footer extends Component {
             <React.Fragment>
                 <section className="footer">
                     <Container>
-                        <Row>
+                        {/* <Row>
                             <Col lg={4}>
                                 <div className="mb-4">
                                     <Link to="/"><img src={logodark} alt="softwaredads" className="logo-dark" /></Link>
@@ -74,7 +74,7 @@ class Footer extends Component {
                                     </Col>
                                 </Row>
                             </Col>
-                        </Row>
+                        </Row> */}
 
                         {/* Render footer links */}
                         <FooterLinks />

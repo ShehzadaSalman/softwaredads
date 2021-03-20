@@ -36,7 +36,7 @@ class NavbarPage extends Component {
         });
         return (
             <React.Fragment>
-                <Navbar expand="lg" fixed="top" className={"navbar-custom sticky sticky-dark " + this.props.navClass}>
+                <Navbar expand="lg" fixed="top" className={"navbar-custom sticky sticky-dark navbar-light nav-sticky"}>
                     <Container>
                         <NavbarBrand className="logo" href="/">
                             {
@@ -63,7 +63,7 @@ class NavbarPage extends Component {
                                     ))}
                                 </Nav>
                                 <div className="call-no">
-                                    <NavLink href="#" className={this.props.isLight === true ? "text-white" : "text-warning"}><i className="mdi mdi-phone mr-1"></i> +92 302 3522336</NavLink>
+                                    <NavLink href="#" className={this.props.isLight === true ? "text-white" : "text-warning"}><i className="mdi mdi-phone mr-1"></i> +92349-4826779</NavLink>
                                 </div>
                             </ScrollspyNav>
                         </Collapse>

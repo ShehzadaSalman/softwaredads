@@ -6,20 +6,18 @@ import SectionTitle from "../../components/common/section-title";
 import ClientsSlider from "./Clients-slider";
 
 //Import Images
-import client1 from "../../assets/images/user/img-1.jpg";
-import client2 from "../../assets/images/user/img-2.jpg";
-import client3 from "../../assets/images/user/img-3.jpg";
-import client4 from "../../assets/images/user/img-4.jpg";
-import client5 from "../../assets/images/user/img-5.jpg";
+import client1 from "../../assets/images/user/img-1.png";
+import client2 from "../../assets/images/user/img-2.png";
+import client3 from "../../assets/images/user/img-3.png";
+
 
 class Clients extends Component {
     state = {
         clients: [
-            { image: client1, name: "Roberta Guevara", post: "Web Developer", desc: "Sed ut perspiciatis unde omnis at iste natus error a voluptatem accusantium doloremque totam." },
-            { image: client2, name: "Roberta Guevara", post: "Web Developer", desc: "Sed ut perspiciatis unde omnis at iste natus error a voluptatem accusantium doloremque totam." },
-            { image: client3, name: "Roberta Guevara", post: "Web Developer", desc: "Sed ut perspiciatis unde omnis at iste natus error a voluptatem accusantium doloremque totam." },
-            { image: client4, name: "Roberta Guevara", post: "Web Developer", desc: "Sed ut perspiciatis unde omnis at iste natus error a voluptatem accusantium doloremque totam." },
-            { image: client5, name: "Roberta Guevara", post: "Web Developer", desc: "Sed ut perspiciatis unde omnis at iste natus error a voluptatem accusantium doloremque totam." },
+            { image: client1, name: "Linda D. Shenk", post: "CEO", desc: "Really helpful and friendly team. They helped me launch my business by providing the most effective e-commerce services." },
+            { image: client2, name: "Barney M. Harris", post: "Director", desc: "They made sure to listen to all my demands and incorporate them into the website that they designed. Loved working with them. " },
+            { image: client3, name: "Peggy S. Eckart", post: "Director", desc: "There graphic designing team is very talented. Software dads has a knack for creativity and always give me the best designs." },
+
         ]
     }
     render() {
